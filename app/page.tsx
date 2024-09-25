@@ -1,5 +1,4 @@
 import Intro from "@/components/intro";
-import myImage from '@/public/myPortrait.jpg'
 
 export default function Home() {
   return (
