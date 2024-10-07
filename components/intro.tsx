@@ -12,7 +12,9 @@ import { FaGithubSquare } from "react-icons/fa";
 export default function Intro() {
   return (
     // better to use sections when everything INSIDE is related to each other 
-    <section> 
+    <section
+        className="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem]"
+    > 
         <div className='flex items-center justify-center'>
             <div className='relative'>
                 <motion.div
