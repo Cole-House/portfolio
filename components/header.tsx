@@ -5,8 +5,11 @@ import React from 'react'
 import { motion } from "framer-motion";
 import { links } from "@/lib/data";
 import Link from 'next/link';
+import clsx from 'clsx';
+import { useActiveSectionContext } from '@/context/active-section-context';
 
 export default function Header() {
+  const{ activeSection, setActiveSection }=useActiveSectionContext();
   return (
     // z index makes sure it is on top
     <header className="z-[999] relative">
@@ -24,10 +27,27 @@ export default function Header() {
                 animate={{ y: 0, opacity: 1 }}
               >
                 <Link 
-                  className='flex w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition dark:text-gray-500 dark:hover:text-gray-300'
+                  className={clsx('flex w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition dark:text-gray-500 dark:hover:text-gray-300', {
+                    'text-gray-950': activeSection === link.name
+                  })}
                   href={link.hash}
+                  onClick={() => {
+                    setActiveSection(link.name);
+                  }}
                 >
                   {link.name}
+                  {link.name === activeSection && (
+                  // layoutId is used to animate the span element when the active section changes
+                  <motion.span
+                    className="bg-gray-100 rounded-full absolute inset-0 -z-10 dark:bg-gray-800"
+                    layoutId="activeSection"
+                    transition={{
+                      type: "spring",
+                      stiffness: 380,
+                      damping: 30,
+                    }}
+                  ></motion.span>
+                )}
                 </Link>
               </motion.li>
             ))}
