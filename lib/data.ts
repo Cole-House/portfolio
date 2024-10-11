@@ -40,6 +40,7 @@ export const experiencesData = [
     location: "Miami, FL",
     description:
       "I graduated after 6 months of studying. I immediately found a job as a front-end developer.",
+    // React.createElement is used to render the icon component as a jsx react element
     icon: React.createElement(LuGraduationCap),
     date: "2019",
   },

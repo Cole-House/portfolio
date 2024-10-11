@@ -5,19 +5,11 @@ import SectionHeading from './section-heading'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { useActiveSectionContext } from '@/context/active-section-context'
+import { useSectionInView } from '@/lib/hooks'
 
 export default function About() {
-  const { setActiveSection } = useActiveSectionContext();
-  // useInView is a hook that returns a ref and a boolean value
-  const {ref, inView} = useInView({
-    threshold: 0.75,
-  });
-
-  useEffect(() => { 
-    if (inView) {
-      setActiveSection('About');
-    }
-  }, [inView, setActiveSection]);
+  // useSectionInView is a custom hook used to set the active section
+  const { ref } = useSectionInView(0.75, 'About');
 
   return (
     <motion.section

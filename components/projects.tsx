@@ -4,21 +4,11 @@ import React, {useEffect, useRef} from 'react'
 import SectionHeading from './section-heading'
 import { projectsData } from '@/lib/data'
 import Project from './project'
-import { useInView } from 'react-intersection-observer';
-import { useActiveSectionContext } from '@/context/active-section-context';
+import { useSectionInView } from '@/lib/hooks';
 
 export default function Projects() {
-  const { setActiveSection } = useActiveSectionContext();
-  // useInView is a hook that returns a ref and a boolean value
-  const {ref, inView} = useInView({
-    threshold: 0.75,
-    });
-
-  useEffect(() => { 
-    if (inView) {
-      setActiveSection('Projects');
-    }
-  }, [inView, setActiveSection]);
+  // useSectionInView is a custom hook used to set the active section
+  const { ref } = useSectionInView(0.6, 'Projects');
   return (
     <section
         ref={ref} id="projects" className="scroll-mt-28 mb-28"

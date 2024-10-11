@@ -8,21 +8,11 @@ import Link from 'next/link';
 import { BsArrowRight, BsLinkedin } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
 import { FaGithubSquare } from "react-icons/fa";
-import { useInView } from 'react-intersection-observer';
-import { useActiveSectionContext } from '@/context/active-section-context';
+import { useSectionInView } from '@/lib/hooks';
 
 export default function Intro() {
-    const { setActiveSection } = useActiveSectionContext();
-    // useInView is a hook that returns a ref and a boolean value
-    const {ref, inView} = useInView({
-    threshold: 0.5,
-    });
-
-    useEffect(() => { 
-    if (inView) {
-        setActiveSection('Home');
-    }
-    }, [inView, setActiveSection]);
+    // useSectionInView is a custom hook used to set the active section
+    const { ref } = useSectionInView(0.5, 'Home');
   return (
     // better to use sections when everything INSIDE is related to each other 
     <section
