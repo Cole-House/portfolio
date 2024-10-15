@@ -8,7 +8,8 @@ export const validateString = (
   
     return true;
   };
-  
+
+  // error handling function that takes in an error and returns a string message based on the error
   export const getErrorMessage = (error: unknown): string => {
     let message: string;
   

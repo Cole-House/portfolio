@@ -6,6 +6,8 @@ import { FaPaperPlane } from 'react-icons/fa'
 import { motion } from 'framer-motion'
 import { useSectionInView } from '@/lib/hooks';
 import { sendEmail } from '@/actions/sendEmail';
+import SubmitBtn from './submit-btn'
+import toast from 'react-hot-toast'
 
 export default function Contact() {
   const { ref } = useSectionInView(0.75, "Contact");
@@ -45,7 +47,18 @@ export default function Contact() {
             console.log(formData.get('senderEmail'));
             console.log(formData.get('message'));
             // to satisfy the async requirement, we need to return a promise whiule calling the sendEmail server function
-            await sendEmail(formData);
+            //extracts the data or error from the result of the sendEmail function
+            const {data, error } = await sendEmail(formData);
+            // if there is an error, alert the user
+            if (error) {
+                toast.error(error);
+                return;
+            } else {
+                // if there is no error, alert the user that the email was sent successfully
+                toast.success("Email sent successfully");
+            }
+
+
         }}
       >
         < input 
@@ -65,9 +78,7 @@ export default function Contact() {
             required
             maxLength={5000}
         />
-        <button type='submit' className='flex items-center justify-center gap-2 h-[3rem] w-[8rem] bg-gray-900 text-white rounded-full outline-none transition-all group-hover:translate-x-1 group-hover:translate-y-1 focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105'>
-            Submit <FaPaperPlane className='text-xs opacity-70 transition-all'/> {""}
-        </button>
+        <SubmitBtn />
       </form>
         
     </motion.section>
