@@ -11,8 +11,13 @@ import {
   import { useSectionInView } from "@/lib/hooks";
 
 export default function Experience() {
+  const { ref } = useSectionInView(0.75, "Experience");
   return (
-    <section>
+    <section
+        id="experience" 
+        ref={ref} 
+        className="scroll-mt-28 mb-28 sm:mb-40"
+    >
         <SectionHeading>My Experiences</SectionHeading>
         <VerticalTimeline lineColor="">
             {
