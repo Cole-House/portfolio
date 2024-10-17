@@ -65,8 +65,8 @@ export default function Contact() {
             type='email' 
             // name attribute is used to identify the form data when it is submitted
             name='senderEmail'
-            className='h-14 rounded-lg borderBlack' 
-            placeholder='   youremail@example.com'
+            className='h-14 rounded-lg borderBlack pl-4' 
+            placeholder='youremail@example.com'
             required
             maxLength={500}
         /> 
