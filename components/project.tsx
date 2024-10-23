@@ -4,6 +4,8 @@ import { useRef } from "react";
 import { projectsData } from "@/lib/data";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
+import Link from "next/link";
+import { FaLink, FaCode } from 'react-icons/fa'
 // Since we kniow EXACTLY what values we are importing we can use "typeof" to define the type
 type ProjectProps = (typeof projectsData)[number];
 
@@ -12,7 +14,9 @@ export default function Project({
     title,
     description,
     tags,
-    imageUrl
+    imageUrl,
+    linkUrl,
+    codeUrl
 }: ProjectProps) {
     //need to give this hook two things "target": reference to the element you want to animate  
     // "offset": what point do you want the animation to start and at what point do you want it to end
@@ -37,9 +41,9 @@ export default function Project({
             className="group mb-3 sm:mb-8 last:mb-0"
         >
             <section 
-            className=' bg-gray-100 max-w-[42rem] border border-black/5 rounded-lg overflow-hidden sm:pr-8 sm:mb-7 last:mb-0 relative sm:group-even:pl-8 rounded-lg'
+            className=' bg-gray-100 max-w-[50rem] border border-black/5 rounded-lg overflow-hidden sm:pr-8 sm:mb-7 last:mb-0 relative sm:group-even:pl-8 rounded-lg'
         >
-            <div className="pt-4 pb-7 px-5 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[50%] flex flex-col h-full sm:group-even:ml-[18rem]">
+            <div className="pt-4 pb-7 px-5 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[50%] flex flex-col h-full sm:group-even:ml-[20rem]">
                 <h3 className='text-2xl font-semibold'>{title}</h3>
                 <p className='mt-2 leading-relaxed text-gray-700 dark:text-white/70'>{description}</p>
                 <ul className="flex flex-wrap mt-4 pt-5 gap-2 sm:mt-auto">
@@ -71,6 +75,20 @@ export default function Project({
                 group-even:right-[intial] group-even:-left-40'
             ></Image>
         </section>
+        <div className="mt-4 flex justify-center space-x-4 pb-4">
+        {linkUrl !== "" && (
+          <Link href={linkUrl} className="bg-gray-900 text-white px-6 py-2 rounded-full flex items-center space-x-2 hover:bg-gray-800 transition">
+            <FaLink />
+            <span>Link</span>
+          </Link>
+        )}
+        {codeUrl !== "" && (
+          <Link href={codeUrl} className="bg-gray-200 text-gray-900 px-6 py-2 rounded-full flex items-center space-x-2 hover:bg-gray-300 transition">
+            <FaCode />
+            <span>Code</span>
+          </Link>
+        )}
+      </div>
         </motion.div>
     )
 }

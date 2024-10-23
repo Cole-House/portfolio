@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import React, { useEffect } from 'react'
-import myImage from '@/public/myPortrait.jpg'
+import myImage from '@/public/147_0710.jpg'
 import { motion } from "framer-motion";
 import Link from 'next/link';
 import { BsArrowRight, BsLinkedin } from "react-icons/bs";
@@ -35,15 +35,15 @@ export default function Intro() {
                   <Image 
                     src={myImage}
                     alt="Cole's portrait"
-                    width={192}
-                    height={192}
+                    width={220}
+                    height={220}
                     quality="95"
                     // priority will get this to load first 
                     priority={true}
-                    className="h-24 w-24 rounded-full object-cover border-[0.35rem] border-white shadow-xl"
+                    className="h-25 w-25 rounded-full object-cover border-[0.35rem] border-white shadow-xl mt-[-5px]"
                   />
                     <motion.span 
-                        className="absolute bottom-0 right-0 text-4xl"
+                        className="absolute bottom-0 right-0 text-6xl"
                         initial={{ opacity: 0, scale: 0 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{
@@ -53,7 +53,7 @@ export default function Intro() {
                             duration: 0.7,
                         }}
                     >
-                     👋
+                     🏡
                     </motion.span>  
                 </motion.div>
             </div>
@@ -64,10 +64,10 @@ export default function Intro() {
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
         >
-            <span className="font-bold">Hello, I'm Cole.</span> I'm an aspiring{" "}
-            <span className="font-bold">Software Developer</span> with experience in{" "}
+            <span className="font-bold">Hello! I'm Cole House</span>, an aspiring{" "}
+            <span className="font-bold">Software Engineer</span> with experience in{" "}
             <span className="font-bold">Full-Stack and AI</span> . I enjoy
-            building <span className="italic">web-apps</span>. that improve{" "}
+            building <span className="italic">web-apps</span> that improve{" "}
             <span className="underline">people's lives</span>.
         </motion.h1>
 
