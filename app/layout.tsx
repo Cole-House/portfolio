@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import Header from '@/components/header';
 import ActiveSectionContextProvider, { ActiveSectionContext } from '@/context/active-section-context';
 import { Toaster } from 'react-hot-toast';
+import { Head } from 'next/document';
 
 const inter = Inter({ subsets: ['latin'] })
 
