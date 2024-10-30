@@ -8,7 +8,7 @@ import { useSectionInView } from '@/lib/hooks';
 
 export default function Projects() {
   // useSectionInView is a custom hook used to set the active section
-  const { ref } = useSectionInView(0.6, 'Projects');
+  const { ref } = useSectionInView(0.5, 'Projects');
   return (
     <section
         ref={ref} id="projects" className="scroll-mt-28 mb-28"
