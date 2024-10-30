@@ -35,12 +35,12 @@ export default function Intro() {
             <Image
               src={myImage}
               alt="Cole's portrait"
-              width={250}
-              height={250}
+              width={220}
+              height={220}
               quality="95"
               // priority will get this to load first
               priority={true}
-              className="h-30 w-30 rounded-full object-cover border-[0.35rem] border-white shadow-xl"
+              className="h-25 w-25 rounded-full object-cover border-[0.35rem] border-white shadow-xl"
             />
             <motion.span
               className="absolute bottom-0 right-0 text-6xl"
