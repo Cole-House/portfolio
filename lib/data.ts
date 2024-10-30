@@ -3,9 +3,9 @@ import { CgWorkAlt } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
 import { FaHandHoldingWater } from "react-icons/fa";
-import socialPlaiImg from "@/public/socialPLAI.png";
-import h2ocImg from "@/public/H2OC_Screenshot.png";
-import dashboardImg from "@/public/dataDashboard.png";
+import socialPlaiImg from "@/public/socialPlaiImg.png";
+import dashboardImg from "@/public/dashboardImg.png";
+import h2ocImg from "@/public/h2ocImg.png";
 
 export const links = [
   {
@@ -78,26 +78,43 @@ export const projectsData = [
       "Worked as a team meeting with a client for Capstone Project. Developed the front-end and game logic for our synchronous online 2-player game designed to gather data to expedite accurate developmental delay diagnosis.",
     tags: ["React", "Bootstrap", "S3 Buckets", "Meteor", "MongoDB"],
     imageUrl: socialPlaiImg,
-    linkUrl:"https://docs.google.com/presentation/d/1-dd_XB8rR4Qd6FTGiHRa98l97JPqsv0r/edit#slide=id.g22e7e34229a_0_6",
-    codeUrl:"https://github.com/ucsfdigitalhealth/socialplai",
+    linkUrl:
+      "https://docs.google.com/presentation/d/1-dd_XB8rR4Qd6FTGiHRa98l97JPqsv0r/edit#slide=id.g22e7e34229a_0_6",
+    codeUrl: "https://github.com/ucsfdigitalhealth/socialplai",
   },
   {
     title: "Data Dashboards",
     description:
       "Built multiple data dashboards for internal case management applications using MEAN stack, helping various departments save time gathering case stats through a specialized, modern and interactive interface. Led user group sessions to gather feedback and iterate on designs.",
-    tags: ["Typescript", "Angular", "Express", "Node.js", "Apex Charts", "MongoDB", "Figma", "REST API"],
+    tags: [
+      "Typescript",
+      "Angular",
+      "Express",
+      "Node.js",
+      "Apex Charts",
+      "MongoDB",
+      "Figma",
+      "REST API",
+    ],
     imageUrl: dashboardImg,
-    linkUrl:"",
-    codeUrl:"",
+    linkUrl: "",
+    codeUrl: "",
   },
   {
     title: "H2OC",
     description:
       "Developed educational platform to alleviate pain points for beneficiaries and aid conservation of Oahu condominiums with professionally curated curriculum, interactive lessons and topic videos utilizing AI.",
-    tags: ["Bootstrap", "Lumen5", "Meteor", "MongoDB", "Chart.js", "Customer/Market Research"],
+    tags: [
+      "Bootstrap",
+      "Lumen5",
+      "Meteor",
+      "MongoDB",
+      "Chart.js",
+      "Customer/Market Research",
+    ],
     imageUrl: h2ocImg,
-    linkUrl:"https://www.youtube.com/watch?v=2SWbr4vUf_A&t=10s",
-    codeUrl:"https://github.com/ecadiena/H20C",
+    linkUrl: "https://www.youtube.com/watch?v=2SWbr4vUf_A&t=10s",
+    codeUrl: "https://github.com/ecadiena/H20C",
   },
 
 ] as const;
